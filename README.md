@@ -1,2 +1,3 @@
 # PythonTutorials
-Slide deck for Python Tutorials
+
+Materials for Python Tutorials
