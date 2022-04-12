@@ -79,7 +79,7 @@ _footer: https://qph.fs.quoracdn.net/main-qimg-e75e13d665984b797b2f8401f7e03c1d
 
 ---
 
-## プログラミング言語　Python
+## プログラミング言語 Python
 
 ```python
 from pathlib import Path
