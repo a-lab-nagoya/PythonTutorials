@@ -1,0 +1,30 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job:
+    name: GitHub Pages
+    runs-on: ubuntu-latest
+    env:
+      MARP_DL_URL: https://github.com/marp-team/marp-cli/releases/download
+      MARP_VERSION: v1.7.1
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          MARP_BINARY=marp-cli-$MARP_VERSION-linux.tar.gz
+          curl -sSLO $MARP_DL_URL/$MARP_VERSION/$MARP_BINARY
+          tar -xf $MARP_BINARY
+      - name: Build slide deck
+        run: |
+          ./marp static/introduction.md -o public/introduction.html
+      - name: Deploy slide deck
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: public
