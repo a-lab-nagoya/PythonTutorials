@@ -3,6 +3,7 @@ name: GitHub Pages
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   job:
@@ -20,7 +21,7 @@ jobs:
           tar -xf $MARP_BINARY
       - name: Build slide deck
         run: |
-          ./marp slide_deck/introduction.md -o public/introduction.html
+          ./marp --html slide_deck/introduction.md -o public/introduction.html
       - name: Deploy slide deck
         uses: peaceiris/actions-gh-pages@v3
         with:
