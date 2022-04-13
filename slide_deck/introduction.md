@@ -63,7 +63,7 @@ _footer: https://speakerdeck.com/jakevdp/the-unexpected-effectiveness-of-python-
 - 特徴
   - 高水準の汎用スクリプト言語
   - シンプルで習得しやすい文法とデータ構造
-  - 豊富な標準ライプラリ (battery included)
+  - 豊富な標準ライブラリ (battery included)
   - 科学用途の豊富な外部ライブラリ
 - 用途
   - 科学計算・機械学習・ウェブ開発・通信制御など
