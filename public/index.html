@@ -11,18 +11,24 @@
 
 <body>
     <div id="main" class="markdown-body" style="margin: 5%;"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/marked@4.0.14/lib/marked.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.6/dist/purify.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css">
     <script>
-        const main = document.getElementById('main');
-        const markdown = fetch("https://raw.githubusercontent.com/KaoruNishikawa/PythonTutorials/main/README.md")
+        const main = document.getElementById('main')
+        fetch("https://raw.githubusercontent.com/a-lab-nagoya/PythonTutorials/main/README.md")
             .then(response => response.text())
             .then(text => {
                 const parsed = marked.parse(text)
-                main.innerHTML = DOMPurify.sanitize(parsed);
-            });
+                main.innerHTML = DOMPurify.sanitize(parsed)
+            })
     </script>
+    <style>
+        .markdown-body a>img {
+            height: 1.2em;
+        }
+    </style>
 </body>
 
 </html>
