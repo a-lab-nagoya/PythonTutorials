@@ -23,7 +23,8 @@ jobs:
       - name: Build slide deck
         run: |
           ./marp --html slide_deck/introduction.md -o public/introduction.html
-      - name: Deploy slide deck
+          ./marp --html slide_deck/environment.md -o public/environment.html
+      - name: Deploy public materials
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
